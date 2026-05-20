@@ -269,7 +269,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 <div id="setupScreen">
   <div class="setup-card">
     <div class="slogo"><div class="sdot"></div>
-      <div><div class="stitle">REC Semanal IT</div><div class="ssub">Planes de la Semana · Prioridades Q1 2026</div></div>
+      <div><div class="stitle">REC Semanal IT</div><div class="ssub">Planes de la Semana · Prioridades Q2 2026</div></div>
     </div>
     <label class="slabel" for="tkInput">Token personal de Asana</label>
     <input class="sinput" id="tkInput" type="password" placeholder="1/00000000:xxxxxxxxxxxxxxxx" autocomplete="off"/>
@@ -371,7 +371,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
           <div class="fl-item"><div class="fl-dot gray"></div><span>Sin comentario</span></div>
         </div>
 
-        <div class="seclbl">🎯 Prioridades Q1 2026 — estado detallado</div>
+        <div class="seclbl">🎯 Prioridades Q2 2026 — estado detallado</div>
         <div id="secPrio"><div class="state-screen" style="min-height:140px"><div class="loader"></div><p class="smsg">Cargando comentarios…</p></div></div>
 
       </div><!-- /panel-prio -->
@@ -387,7 +387,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 
 <script>
 const SECTION_PLANES = '1208859007777460';
-const SECTION_PRIO   = '1206144732157255';
+const SECTION_PRIO   = '1206267707980014';
 const TK_KEY         = 'asana_pat_rec_dp';
 const $  = id => document.getElementById(id);
 
@@ -624,7 +624,7 @@ async function renderPriorities(prioTasks){
   tb.textContent=alertCount>0?alertCount:prioTasks.length;
   tb.className='tab-badge '+(alertCount>0?'r':'g');
 
-  $('secPrio').innerHTML=html||'<div class="prio-card"><div class="empty">Sin prioridades en Q1 2026</div></div>';
+  $('secPrio').innerHTML=html||'<div class="prio-card"><div class="empty">Sin prioridades en Q2 2026</div></div>';
 }
 
 /* ── MAIN RENDER ── */
@@ -689,7 +689,7 @@ async function renderAll(planeTasks,prioTasks){
     ?`<div class="cl">`+done.map(t=>`<div class="cr"><span class="ck">✓</span><span class="cn">${t.name}</span><span class="cm">${shn(t.assignee)} · ${new Date(t.completed_at).toLocaleDateString('es-GT',{day:'numeric',month:'short'})}</span></div>`).join('')+`</div>`
     :`<div class="pb"><div class="empty">Sin tareas completadas esta semana aún</div></div>`;
 
-  $('ftTxt').textContent=`Asana · REC Semanal IT · ${planeTasks.length} tareas · ${prioTasks.length} prioridades Q1`;
+  $('ftTxt').textContent=`Asana · REC Semanal IT · ${planeTasks.length} tareas · ${prioTasks.length} prioridades Q2`;
   $('lastUpd').textContent=nd.toLocaleTimeString('es-GT',{hour:'2-digit',minute:'2-digit'});
 
   /* priorities (async comment fetch) */
